@@ -18,8 +18,6 @@ import java.util.Map;
  */
 @Service("iShippingService")
 public class ShippingServiceImpl implements IShippingService {
-
-
     @Autowired
     private ShippingMapper shippingMapper;
 
@@ -28,6 +26,7 @@ public class ShippingServiceImpl implements IShippingService {
         int rowCount = shippingMapper.insert(shipping);
         if(rowCount > 0){
             Map result = Maps.newHashMap();
+            //插入之后，mybatis能将mysql自动生成的主键id拿到并注入到之前的对象中
             result.put("shippingId",shipping.getId());
             return ServerResponse.createBySuccess("新建地址成功",result);
         }

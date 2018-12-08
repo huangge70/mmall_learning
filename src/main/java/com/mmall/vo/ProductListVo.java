@@ -2,7 +2,11 @@ package com.mmall.vo;
 
 import java.math.BigDecimal;
 
+/**
+ * Created by geely
+ */
 public class ProductListVo {
+
     private Integer id;
     private Integer categoryId;
 
