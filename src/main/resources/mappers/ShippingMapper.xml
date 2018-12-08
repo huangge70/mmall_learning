@@ -31,6 +31,7 @@
     delete from mmall_shipping
     where id = #{id,jdbcType=INTEGER}
   </delete>
+  <!--useGeneratedKeys="true" keyProperty="id",加上这两个配置之后，能拿到mysql自动生成的主键id-->
   <insert id="insert" parameterType="com.mmall.pojo.Shipping" useGeneratedKeys="true" keyProperty="id">
     insert into mmall_shipping (id, user_id, receiver_name, 
       receiver_phone, receiver_mobile, receiver_province, 
